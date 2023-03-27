@@ -1,5 +1,7 @@
+import { currentGalleryImage } from "@/atoms/currentGalleryImage";
 import Image from "next/image";
 import { FC } from "react";
+import { useRecoilState } from "recoil";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -45,6 +47,7 @@ const images = [
 ];
 
 export const Gallery: FC = (): JSX.Element => {
+  const [_, setCurrentGalleryImage] = useRecoilState(currentGalleryImage);
   return (
     <div className="mt-5">
     <h2 className="mb-4 text-lg w-full text-center">🐕 Algumas fotinhas dela:</h2>
@@ -60,14 +63,16 @@ export const Gallery: FC = (): JSX.Element => {
       {
         images.map((img) => (
           <SwiperSlide key={img.path}>
-            <div className=" aspect-square">
-              <Image
-                src={img.path}
-                className="object-scale-down"
-                fill
-                alt={img.alt}
-              />
-            </div>
+            <button onClick={() => setCurrentGalleryImage(img.path)}>
+              <div className="aspect-square">
+                <Image
+                  src={img.path}
+                  className="object-scale-down"
+                  fill
+                  alt={img.alt}
+                />
+              </div>
+            </button>
           </SwiperSlide>
         ))
       }
@@ -75,3 +80,7 @@ export const Gallery: FC = (): JSX.Element => {
     </div>
   );
 };
+function setRecoilState(): [any, any] {
+  throw new Error("Function not implemented.");
+}
+

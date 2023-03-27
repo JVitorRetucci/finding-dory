@@ -1,6 +1,5 @@
 import {
   DevicePhoneMobileIcon,
-  MapIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/solid";
 import { Menu, Transition } from "@headlessui/react";
