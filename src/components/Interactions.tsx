@@ -36,7 +36,7 @@ const phones = [
 export const Interactions: FC = (): JSX.Element => {
   return (
     <div className="mt-3 flex flex-col items-center">
-      <h2 className="text-center uppercase bg-amber-500/70 px-4 py-2 w-fit rounded-full">
+      <h2 className="text-center uppercase text-amber-500/70 w-fit">
         Viu ela? Fala pra gente!
       </h2>
       <ul className="w-full px-4 mt-4">
@@ -86,7 +86,7 @@ export const Interactions: FC = (): JSX.Element => {
                               target="_blank"
                               className="leading-none w-full block p-2"
                             >
-                              {phone.phone} - <strong>{phone.name}</strong>
+                              <span className="underline hover:no-underline">{phone.phone}</span> - <strong>{phone.name}</strong>
                             </a>
                           </div>
                         </Menu.Item>
