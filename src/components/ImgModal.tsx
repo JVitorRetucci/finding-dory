@@ -4,15 +4,8 @@ import { useRecoilState } from "recoil";
 import { currentGalleryImage } from "@/atoms/currentGalleryImage";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { images } from "@/data/images";
-import { Swiper, SwiperRef, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import { SwiperOptions } from "swiper";
-import { SwiperEvents, SwiperModule } from "swiper/types";
-
-interface IImgModalProps {
-  path: string;
-  alt?: string;
-}
 
 export const ImgModal: FC = (): JSX.Element => {
   const [swiper, setSwiper] = useState<any | null>(null);
@@ -30,7 +23,7 @@ export const ImgModal: FC = (): JSX.Element => {
   }, [currentImageIndex]);
 
   useEffect(() => {
-    slideTo(idx)
+    if (idx !== undefined) slideTo(idx)
   }, [idx])
 
   return (
