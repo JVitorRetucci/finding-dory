@@ -33,7 +33,7 @@ export const ImgModal: FC = (): JSX.Element => {
       className="relative z-50"
     >
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
-        <Dialog.Panel className="max-w-xs md:max-w-lg flex bg-slate-50 h-[90%] p-4 rounded">
+        <Dialog.Panel className="max-w-sm md:max-w-lg flex bg-slate-50 h-[90%] p-4 rounded">
           <div className="relative h-full w-96 max-w-full">
             <button className="absolute w-10 h-10 p-2 top-0 right-0 z-20">
               <XMarkIcon
