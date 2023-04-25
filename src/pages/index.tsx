@@ -4,14 +4,14 @@ import { Hero } from "@/components/Hero";
 import { Interactions } from "@/components/Interactions";
 import Head from "next/head";
 import { useRef } from "react";
-import { RecoilRoot, useRecoilState } from "recoil";
+import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ImgModal } from "@/components/ImgModal";
 
 export default function Home() {
-  const [currentImage, setCurrentImage] = useRecoilState(currentGalleryImage);
+  const currentImage = useRecoilValue(currentGalleryImage);
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function Home() {
             <Hero />
             <Interactions />
             <Gallery />
-            <ImgModal path={currentImage}/>
+            <ImgModal/>
           </div>
         </main>
     </>

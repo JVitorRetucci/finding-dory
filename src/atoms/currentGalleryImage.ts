@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const currentGalleryImage = atom({
+export const currentGalleryImage = atom<number | undefined>({
   key: 'imageGallery',
-  default: ''
+  default: undefined
 });
